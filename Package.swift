@@ -32,16 +32,14 @@ let package = Package(
                 .product(name: "Metrics", package: "swift-metrics"),
                 .product(name: "NIO", package: "swift-nio"),
                 .product(name: "NIOHTTP1", package: "swift-nio"),
-            ],
-            swiftSettings: [.unsafeFlags(["-Xfrontend", "-enable-experimental-concurrency"])]
-         ),
+            ]
+        ),
         .target(
             name: "HummingbirdFoundation",
             dependencies: [
                 .byName(name: "Hummingbird"),
                 .product(name: "NIOFoundationCompat", package: "swift-nio"),
-            ],
-            swiftSettings: [.unsafeFlags(["-Xfrontend", "-enable-experimental-concurrency"])]
+            ]
         ),
         .target(name: "HummingbirdXCT", dependencies: [
             .byName(name: "Hummingbird"),
